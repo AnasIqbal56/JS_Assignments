@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alerts & Input Assignment</title>
+</head>
+<body>
+
+  <!-- 1. Arithmetic operation result -->
+  <script>
+    var a = 10;
+    document.write("Result:<br>");
+    document.write("The value of a is: " + a + "<br><br>");
+
+    ++a;
+    document.write("The value of ++a is: " + a + "<br>");
+    document.write("Now the value of a is: " + a + "<br><br>");
+
+    document.write("The value of a++ is: " + a++ + "<br>");
+    document.write("Now the value of a is: " + a + "<br><br>");
+
+    --a;
+    document.write("The value of --a is: " + a + "<br>");
+    document.write("Now the value of a is: " + a + "<br><br>");
+
+    document.write("The value of a-- is: " + a-- + "<br>");
+    document.write("Now the value of a is: " + a + "<br><br>");
+  </script>
+
+  <!-- 2. Complex expression analysis -->
+  <script>
+    var a = 2, b = 1;
+    var result = --a - --b + ++b + b--;
+    /*
+      --a = 1
+      --b = 0
+      ++b = 1
+      b-- = 1 (but b becomes 0 after this)
+      So: 1 - 0 + 1 + 1 = 3
+    */
+    document.write(`a is ${a} <br>`);
+    document.write(`b is ${b} <br>`);
+    document.write(`result is ${result} <br><br>`);
+  </script>
+
+  <!-- 3. Greet user by name -->
+  <script>
+    let userName = prompt("Enter your name:");
+    alert(`Hello ${userName}, welcome!`);
+  </script>
+
+  <!-- 5. Multiplication table -->
+  <script>
+    let tableNumber = prompt("Enter a number for multiplication table:", 5);
+    document.write(`<br>Multiplication Table of ${tableNumber}<br>`);
+    for (let i = 1; i <= 10; i++) {
+      document.write(`${tableNumber} x ${i} = ${tableNumber * i} <br>`);
+    }
+  </script>
+
+  <!-- 6. Subject marks and percentage using table -->
+  <script>
+    let sub1 = prompt("Enter name of first subject:");
+    let sub2 = prompt("Enter name of second subject:");
+    let sub3 = prompt("Enter name of third subject:");
+    let totalMarks = 100;
+
+    let marks1 = +prompt(`Enter obtained marks in ${sub1}:`);
+    let marks2 = +prompt(`Enter obtained marks in ${sub2}:`);
+    let marks3 = +prompt(`Enter obtained marks in ${sub3}:`);
+
+    let totalObtained = marks1 + marks2 + marks3;
+    let percentage = (totalObtained / (totalMarks * 3)) * 100;
+
+    document.write("<br><table border='1' cellpadding='5'>");
+    document.write("<tr><th>Subject</th><th>Total Marks</th><th>Obtained Marks</th><th>Percentage</th></tr>");
+    document.write(`<tr><td>${sub1}</td><td>${totalMarks}</td><td>${marks1}</td><td>${(marks1 / totalMarks) * 100}%</td></tr>`);
+    document.write(`<tr><td>${sub2}</td><td>${totalMarks}</td><td>${marks2}</td><td>${(marks2 / totalMarks) * 100}%</td></tr>`);
+    document.write(`<tr><td>${sub3}</td><td>${totalMarks}</td><td>${marks3}</td><td>${(marks3 / totalMarks) * 100}%</td></tr>`);
+    document.write(`<tr><th colspan='2'>Total</th><td>${totalObtained}</td><td>${percentage.toFixed(2)}%</td></tr>`);
+    document.write("</table>");
+  </script>
+
+</body>
+</html>

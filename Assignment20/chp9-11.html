@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional Statements Assignment</title>
+</head>
+<body>
+
+  <!-- 1. City input -->
+  <script>
+    let city = prompt("Enter your city:");
+    if (city.toLowerCase() === "karachi") {
+      alert("Welcome to city of lights");
+    }
+  </script>
+
+  <!-- 2. Gender input -->
+  <script>
+    let gender = prompt("Enter your gender (male/female):");
+    if (gender.toLowerCase() === "male") {
+      alert("Good Morning Sir.");
+    } else if (gender.toLowerCase() === "female") {
+      alert("Good Morning Ma’am.");
+    }
+  </script>
+
+  <!-- 3. Traffic signal -->
+  <script>
+    let signal = prompt("Enter traffic signal color (red/yellow/green):").toLowerCase();
+    if (signal === "red") {
+      alert("Must Stop");
+    } else if (signal === "yellow") {
+      alert("Ready to move");
+    } else if (signal === "green") {
+      alert("Move now");
+    }
+  </script>
+
+  <!-- 4. Fuel check -->
+  <script>
+    let fuel = parseFloat(prompt("Enter remaining fuel in litres:"));
+    if (fuel < 0.25) {
+      alert("Please refill the fuel in your car");
+    }
+  </script>
+
+  <!-- 5. Conditional testing -->
+  <script>
+    var a = 4;
+    if (++a === 5) {
+      alert("given condition for variable a is true");
+    }
+
+    var b = 82;
+    if (b++ === 83) {
+      alert("given condition for variable b is true");
+    }
+
+    var c = 12;
+    if (c++ === 13) {
+      alert("condition 1 is true");
+    }
+    if (c === 13) {
+      alert("condition 2 is true");
+    }
+    if (++c < 14) {
+      alert("condition 3 is true");
+    }
+    if (c === 14) {
+      alert("condition 4 is true");
+    }
+
+    var materialCost = 20000;
+    var laborCost = 2000;
+    var totalCost = materialCost + laborCost;
+    if (totalCost === laborCost + materialCost) {
+      alert("The cost equals");
+    }
+
+    if (true) {
+      alert("True");
+    }
+    if (false) {
+      alert("False"); // won't show
+    }
+
+    if ("car" < "cat") {
+      alert("car is smaller than cat");
+    }
+  </script>
+
+  <!-- 6. Marksheet -->
+  <script>
+    let s1 = +prompt("Enter marks for Subject 1:");
+    let s2 = +prompt("Enter marks for Subject 2:");
+    let s3 = +prompt("Enter marks for Subject 3:");
+    let totalMarks = +prompt("Enter total marks:");
+    let totalObtained = s1 + s2 + s3;
+    let percentage = (totalObtained / totalMarks) * 100;
+    let grade, remarks;
+
+    if (percentage >= 80) {
+      grade = "A-one"; remarks = "Excellent";
+    } else if (percentage >= 70) {
+      grade = "A"; remarks = "Good";
+    } else if (percentage >= 60) {
+      grade = "B"; remarks = "You need to improve";
+    } else {
+      grade = "Fail"; remarks = "Sorry";
+    }
+
+    document.write("<br><h3>Mark Sheet</h3>");
+    document.write(`Total Marks: ${totalMarks} <br>`);
+    document.write(`Marks Obtained: ${totalObtained} <br>`);
+    document.write(`Percentage: ${percentage.toFixed(2)}% <br>`);
+    document.write(`Grade: ${grade} <br>`);
+    document.write(`Remarks: ${remarks} <br>`);
+  </script>
+
+  <!-- 7. Guess game -->
+  <script>
+    let secretNumber = 6;
+    let guess = +prompt("Guess the secret number (1-10):");
+    if (guess === secretNumber) {
+      alert("Bingo! Correct answer");
+    } else if (guess === secretNumber + 1 || guess === secretNumber - 1) {
+      alert("Close enough to the correct answer");
+    }
+  </script>
+
+  <!-- 8. Divisible by 3 -->
+  <script>
+    let num = +prompt("Enter a number to check if divisible by 3:");
+    if (num % 3 === 0) {
+      alert("Yes, divisible by 3");
+    } else {
+      alert("Not divisible by 3");
+    }
+  </script>
+
+  <!-- 9. Even or Odd -->
+  <script>
+    let evenOdd = +prompt("Enter a number to check even or odd:");
+    if (evenOdd % 2 === 0) {
+      alert("Even number");
+    } else {
+      alert("Odd number");
+    }
+  </script>
+
+  <!-- 10. Temperature message -->
+  <script>
+    let temp = +prompt("Enter temperature:");
+    if (temp > 40) {
+      alert("It is too hot outside.");
+    } else if (temp > 30) {
+      alert("The Weather today is Normal.");
+    } else if (temp > 20) {
+      alert("Today’s Weather is cool.");
+    } else if (temp > 10) {
+      alert("OMG! Today’s weather is so Cool.");
+    }
+  </script>
+
+  <!-- 11. Simple calculator -->
+  <script>
+    let num1 = +prompt("Enter first number:");
+    let num2 = +prompt("Enter second number:");
+    let operation = prompt("Enter operation (+, -, *, /, %):");
+    let result;
+
+    if (operation === "+") {
+      result = num1 + num2;
+    } else if (operation === "-") {
+      result = num1 - num2;
+    } else if (operation === "*") {
+      result = num1 * num2;
+    } else if (operation === "/") {
+      result = num1 / num2;
+    } else if (operation === "%") {
+      result = num1 % num2;
+    } else {
+      result = "Invalid operation!";
+    }
+
+    alert(`Result: ${result}`);
+  </script>
+
+</body>
+</html>

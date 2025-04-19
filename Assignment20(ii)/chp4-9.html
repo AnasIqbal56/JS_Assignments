@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Assignment Questions 5</title>
+</head>
+<body>
+
+  <!-- Chapter 4: Variables -->
+  <script>
+    // 1. Corrected statement
+    var productCost = 3.45;
+
+    // 2. CamelCase version
+    var nameOfBand;
+
+    // 3. Single legal variable with number
+    var price = 100;
+
+    // 4. Combination of first and last name
+    var firstLastName = "JohnDoe";
+
+    // 5. Legal and Illegal variables
+    // Legal:
+    var myVar, _var, $var, name1, userName;
+    // Illegal (comment krdia hai to avoid error):
+    // var 1name;
+    // var my-name;
+    // var var;
+    // var @var;
+    // var user name;
+  </script>
+
+  <!-- Chapter 5: Math Expression I -->
+  <script>
+    // 1. Modulus (%)
+    // 2. Value of num
+    var num = 20 % 6; // 2
+
+    // 3. Large number multiplication
+    var largeNum = 1000 * 2000;
+
+    // 4. Subtraction of variables
+    var a = 10, b = 5;
+    var difference = a - b;
+
+    // 5. Remainder using undeclared variable
+    var remainderResult = 15 % 4;
+
+    // 6. Alert multiplication
+    alert(5 * 3);
+  </script>
+
+  <!-- Chapter 6: Math Expression II -->
+  <script>
+    // 1. Short form
+    let x = 10;
+    x++;
+
+    // 2. Reduce 100 to 99
+    let val = 100;
+    val--;
+
+    // 3. x++
+    x = 50;
+    let y = x++; // y = 50
+
+    // 4. --y
+    let z = --y; // y = 49, z = 49
+
+    // 5. Decrement and assign
+    let num2 = 10;
+    let newNum = num2--;
+
+    // 6. Add 1 and assign original
+    let val1 = 5;
+    let originalVal = val1++;
+
+    // 7. Increment and alert
+    let count = 20;
+    count++;
+    alert(count);
+  </script>
+
+  <!-- Chapter 7: Math Expression III -->
+  <script>
+    let calculatedNum;
+    calculatedNum = 2 + (2 * 6);         // 14
+    calculatedNum = (2 + 2) * 6;         // 24
+    calculatedNum = (2 + 2) * (4 + 2);   // 24
+    calculatedNum = ((2 + 2) * 4) + 2;   // 18
+
+    // Statements producing specific results
+    let cost = ((2 + 2) * 4) + 10;       // 26
+    let units = 2 + (2 * 4) + 10;        // 20
+    let pressure = (4 / 2) * 4;          // 8
+  </script>
+
+  <!-- Chapter 8: Concatenating Strings -->
+  <script>
+    let numStr = "2" + "2"; // "22"
+    let message = "Hello," + "Anas";
+    alert(message); // "Hello,Dolly"
+
+    alert("33" + 3); // "333"
+
+    alert("Pakistan " + "Zindabad");
+
+    let mix = "Score: " + 100;
+
+    let str1 = "Hello";
+    let str2 = "Anas";
+    let result = str1 + " " + str2;
+  </script>
+
+  <!-- Chapter 9: Prompts -->
+  <script>
+    let firstName = prompt("Enter first name");
+    let country = prompt("Country?", "China");
+
+    // Corrected prompt
+    let yourName = prompt("Enter Your Name");
+
+    let defaultPrompt = prompt("Your favorite color?", "Blue");
+
+    let promptMsg = "Enter your city";
+    let defaultCity = "Karachi";
+    let userCity = prompt(promptMsg, defaultCity);
+
+    let favoriteFood = prompt("Favorite food?", "Pizza");
+    alert("You entered: " + favoriteFood);
+  </script>
+
+</body>
+</html>
