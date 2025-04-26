@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 21ii - Chapter 14 to 17</title>
+</head>
+<body>
+
+<script>
+  // --- Chapter 14 (If Statements Nested) ---
+
+  // Q1: Password check with nested if
+  let password = prompt("Enter your password:");
+  if (password !== "") {
+    if (password.length <= 5) {
+      alert("Password must be greater than 5");
+    } else {
+      alert("OK");
+    }
+  }
+
+  // Q2: Nested if with a and c
+  let a = 1;
+  let c = "Max";
+  if (a === 1) {
+    if (c === "Max") {
+      alert("OK");
+    }
+  }
+
+  // Q3: Nested if ko single condition mein likhna
+  if (a === 1 && c === "Max") {
+    alert("OK");
+  }
+
+  // Q4: 2 variables ko compare karna with nested if
+  let num1 = 7, num2 = 7;
+  if (num1 === num2) {
+    if (num1 <= num2) {
+      alert("Both are equal and less than or equal as well");
+    }
+  }
+
+  // --- Chapter 15 (Array I) ---
+
+  // Q1: Empty array declare karna
+  let arr = [];
+
+  // Q2: Array with 1 string element
+  let arr2 = ["Hello"];
+
+  // Q3: Alphabet array se “j” ko alert karna
+  let alphabet = ["h", "i", "j", "k"];
+  alert(alphabet[2]);
+
+  // Q4: Alphabet array ki length nikalna
+  let fullAlpha = ["h", "i", "j", "k", "l", "m", "n", "o"];
+  alert("Length of array is: " + fullAlpha.length);
+
+  // Q5: Ek element add karna aur alert se dikhana
+  let arr3 = ["first"];
+  arr3[1] = "second";
+  alert(arr3[1]);
+
+  // --- Chapter 16 (Array II) ---
+
+  // Q1: Array mein push se naya element add karna aur alert karna
+  let pushArr = ["hi"];
+  pushArr.push("bye");
+  alert(pushArr[pushArr.length - 1]);
+
+  // Q2: Last element ko remove karna using pop()
+  let Alphabet = ["h", "i", "j", "k"];
+  Alphabet.pop();
+
+  // Q3: Array ke end mein number add karna
+  Alphabet.push(42);
+
+  // --- Chapter 17 (Array III) ---
+
+  // Q1: Pehla element hataana using shift()
+  let sizes = ["S", "M", "XL", "XXL", "XXXL"];
+  sizes.shift();
+
+  // Q2: Teen number elements ko array ke start mein add karna
+  sizes.unshift(1, 2, 3);
+
+  // Q3: Ek element wali array mein start mein naya element add karna
+  let single = ["second"];
+  single.unshift("first");
+  alert(single[0]);
+
+  // Q4: "L" ko "M" aur "XL" ke darmiyan insert karna
+  let sizeArr = ["S", "M", "XL", "XXL", "XXXL"];
+  sizeArr.splice(2, 0, "L");
+
+  // Q5: Pehle 3 sizes ko nayi array regSizes mein copy karna
+  let regSizes = sizeArr.slice(0, 3);
+
+  // Q6: "dog" ke baad 2 elements add karna aur beech ke remove karna
+  let pets = ["dog", "cat", "ox", "duck", "frog"];
+  pets.splice(1, 3, "parrot", "hamster");
+
+  // Q7: "cat" aur "ox" ko remove karna
+  let pets2 = ["dog", "cat", "ox", "duck", "frog"];
+  pets2.splice(1, 2);
+
+  // Q8: "duck" aur "frog" ko slice karke new array banana
+  let pets3 = ["dog", "cat", "ox", "duck", "frog", "flea"];
+  let result = pets3.slice(3, 5);
+  alert("Sliced pets: " + result.join(", "));
+
+</script>
+
+</body>
+</html>

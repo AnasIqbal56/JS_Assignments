@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>If/Else & Conditions Assignment</title>
+</head>
+<body>
+
+  <!-- 1. Character type check -->
+  <script>
+    let char = prompt("Enter a single character:");
+    let code = char.charCodeAt(0);
+
+    if (code >= 48 && code <= 57) {
+      alert("It's a number");
+    } else if (code >= 65 && code <= 90) {
+      alert("It's an uppercase letter");
+    } else if (code >= 97 && code <= 122) {
+      alert("It's a lowercase letter");
+    } else {
+      alert("It's a special character or unknown input");
+    }
+  </script>
+
+  <!-- 2. Larger of two integers -->
+  <script>
+    let num1 = +prompt("Enter first number:");
+    let num2 = +prompt("Enter second number:");
+    if (num1 > num2) {
+      alert(`${num1} is larger`);
+    } else if (num2 > num1) {
+      alert(`${num2} is larger`);
+    } else {
+      alert("Both numbers are equal");
+    }
+  </script>
+
+  <!-- 3. Positive, negative or zero -->
+  <script>
+    let number = +prompt("Enter a number:");
+    if (number > 0) {
+      alert("Positive number");
+    } else if (number < 0) {
+      alert("Negative number");
+    } else {
+      alert("Zero");
+    }
+  </script>
+
+  <!-- 4. Vowel check -->
+  <script>
+    let letter = prompt("Enter a letter:").toLowerCase();
+    let isVowel = letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u';
+    alert(`Is vowel: ${isVowel}`);
+  </script>
+
+  <!-- 5. Password check -->
+  <script>
+    let correctPassword = "js1234";
+    let userPassword = prompt("Enter your password:");
+
+    if (!userPassword) {
+      alert("Please enter your password");
+    } else if (userPassword === correctPassword) {
+      alert("Correct! The password you entered matches the original password");
+    } else {
+      alert("Incorrect password");
+    }
+  </script>
+
+  <!-- 6. Fixing the if/else block -->
+  <script>
+    let greeting;
+    let hour = 13;
+    if (hour < 18) {
+      greeting = "Good day";
+    } else {
+      greeting = "Good evening";
+    }
+    alert(greeting);
+  </script>
+
+  <!-- 7. Time-based greeting -->
+  <script>
+    let time = +prompt("Enter time in 24-hour format (e.g., 1900):");
+
+    if (time >= 0 && time < 1200) {
+      alert("Good morning!");
+    } else if (time >= 1200 && time < 1700) {
+      alert("Good afternoon!");
+    } else if (time >= 1700 && time < 2100) {
+      alert("Good evening!");
+    } else if (time >= 2100 && time <= 2359) {
+      alert("Good night!");
+    } else {
+      alert("Invalid time entered.");
+    }
+  </script>
+
+</body>
+</html>

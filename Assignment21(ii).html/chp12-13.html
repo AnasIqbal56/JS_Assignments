@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Document</title>
+</head>
+<body>
+    
+  <script>
+    // Chapter 12: If...Else aur Else If
+
+    // Do variables ko compare kar rahe hain
+    let a = 10, b = 5;
+    if (a >= b) {
+      alert("a is greater than or equal to b");
+    } else {
+      alert("a is less than b");
+    }
+
+    </script>
+<script>    
+let name = prompt("Enter your name:");
+let className = prompt("Enter your class:");
+
+let mathMarks = parseInt(prompt("Enter marks obtained in Math (out of 100):"));
+let scienceMarks = parseInt(prompt("Enter marks obtained in Science (out of 100):"));
+let englishMarks = parseInt(prompt("Enter marks obtained in English (out of 100):"));
+let historyMarks = parseInt(prompt("Enter marks obtained in History (out of 100):"));
+let geographyMarks = parseInt(prompt("Enter marks obtained in Geography (out of 100):"));
+
+
+let totalMarks = 500;
+let totalObtainedMarks = mathMarks + scienceMarks + englishMarks + historyMarks + geographyMarks;
+let percentage = (totalObtainedMarks / totalMarks) * 100;
+
+let grade;
+if (percentage<100&&percentage >= 90) {
+  grade = "A+";
+} else if (percentage<90&&percentage >= 80) {
+  grade = "A";
+} else if (percentage<80&&percentage >= 70) {
+  grade = "B+";
+} else if (percentage<70&&percentage >= 60) {
+  grade = "B";
+} else if (percentage<60&&percentage >= 50) {
+  grade = "C";
+} else if(percentage<50&&percentage>0) {
+  grade = "F";
+}else{
+    grade="Invalid Grade"
+}
+
+console.log("=====================================");
+console.log("             MARKSHEET");
+console.log("=====================================");
+console.log(`Name: ${name}`);
+console.log(`Class: ${className}`);
+console.log("=====================================");
+console.log("Subject     | Obtained Marks | Max Marks");
+console.log("=====================================");
+console.log(`Math        | ${mathMarks}             | 100`);
+console.log(`Science     | ${scienceMarks}             | 100`);
+console.log(`English     | ${englishMarks}             | 100`);
+console.log(`History     | ${historyMarks}             | 100`);
+console.log(`Geography   | ${geographyMarks}             | 100`);
+console.log("=====================================");
+console.log(`Total Marks: ${totalObtainedMarks} / ${totalMarks}`);
+console.log(`Percentage: ${percentage}%`);
+console.log(`Grade: ${grade}`);
+console.log("=====================================");
+
+</script>
+
+
+    <script>
+    // Chapter 13: Testing sets of conditions
+
+    // Do shartein check karna: a == b AND c == d
+    let c = 20, d = 20;
+    if (a == b && c == d) {
+      alert("Both conditions are true");
+    }
+
+    // a == b ya phir c != d check kar rahe hain
+    if (a == b || c != d) {
+      alert("At least one condition is true");
+    }
+
+    // Name aur age check karna (multiple conditions)
+    let personName = "Hamza";
+    let age = 45;
+    if ((personName === "Hamza" || personName === "Arsalan") && age < 60) {
+      alert("Name and age conditions are valid");
+    }
+
+    // Do numbers ko compare karna
+    let num1 = 10, num2 = 20;
+    if (num1 < num2 || num1 > num2) {
+      alert("Numbers are not equal");
+    }
+
+    // First name aur last name user se lena aur match karna
+    let firstName = "Ali", lastName = "Raza";
+    let userFirst = prompt("Enter your first name:");
+    let userLast = prompt("Enter your last name:");
+    if (userFirst === firstName && userLast === lastName) {
+      alert("Names match!");
+    }
+  </script>
+
+</body>
+</html>

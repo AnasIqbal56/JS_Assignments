@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrays Assignment</title>
+</head>
+<body>
+
+  <!-- 1. Empty array using literal notation -->
+  <script>
+    let studentNames = [];
+  </script>
+
+  <!-- 2. Empty array using object notation -->
+  <script>
+    let studentNamesObj = new Array();
+  </script>
+
+  <!-- 3. Strings array -->
+  <script>
+    let fruits = ["Apple", "Banana", "Mango"];
+  </script>
+
+  <!-- 4. Numbers array -->
+  <script>
+    let numbers = [1, 2, 3, 4, 5];
+  </script>
+
+  <!-- 5. Boolean array -->
+  <script>
+    let flags = [true, false, true];
+  </script>
+
+  <!-- 6. Mixed array -->
+  <script>
+    let mixedArray = ["Hello", 42, true];
+  </script>
+
+  <!-- 7. Educational qualifications -->
+  <script>
+    let education = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M.Phil.", "PhD"];
+    document.write("<h3>Qualifications:</h3>");
+    for (let i = 0; i < education.length; i++) {
+      document.write(`${i + 1}) ${education[i]}<br>`);
+    }
+  </script>
+
+  <!-- 8. Student scores and percentages -->
+  <script>
+    let students = ["Ali", "Sawera", "Anas"];
+    let scores = [420, 380, 450];
+    let totalMarks = 500;
+
+    for (let i = 0; i < students.length; i++) {
+      let percent = (scores[i] / totalMarks) * 100;
+      document.write(`<br>Score of ${students[i]} is ${scores[i]}. Percentage: ${percent}%`);
+    }
+  </script>
+
+  <!-- 9. Color array manipulations -->
+  <script>
+    let colors = ["Red", "Green", "Blue"];
+    document.write("<br><br>Initial Colors: " + colors.join(", ") + "<br>");
+
+    let beginColor = prompt("Which color do you want to add to the beginning?");
+    colors.unshift(beginColor);
+    document.write("After adding to beginning: " + colors.join(", ") + "<br>");
+
+    let endColor = prompt("Which color do you want to add to the end?");
+    colors.push(endColor);
+    document.write("After adding to end: " + colors.join(", ") + "<br>");
+
+    colors.unshift("Purple", "Orange");
+    document.write("After adding two more to beginning: " + colors.join(", ") + "<br>");
+
+    colors.shift();
+    document.write("After deleting first color: " + colors.join(", ") + "<br>");
+
+    colors.pop();
+    document.write("After deleting last color: " + colors.join(", ") + "<br>");
+
+    let indexToAdd = +prompt("At which index do you want to add a color?");
+    let colorToAdd = prompt("Which color do you want to add?");
+    colors.splice(indexToAdd, 0, colorToAdd);
+    document.write("After adding at specific index: " + colors.join(", ") + "<br>");
+
+    let indexToDelete = +prompt("At which index do you want to delete color(s)?");
+    let countToDelete = +prompt("How many colors do you want to delete?");
+    colors.splice(indexToDelete, countToDelete);
+    document.write("After deletion: " + colors.join(", ") + "<br>");
+  </script>
+
+  <!-- 10. Sort student scores -->
+  <script>
+    let scoresArray = [320, 230, 480, 120];
+    document.write("<br><br>Scores of Students: " + scoresArray + "<br>");
+    scoresArray.sort((a, b) => a - b);
+    document.write("Ordered Scores: " + scoresArray + "<br>");
+  </script>
+
+  <!-- 11. Select cities -->
+  <script>
+    let cities = ["Karachi", "Lahore", "Islamabad", "Quetta", "Peshawar"];
+    let selectedCities = cities.slice(2, 5);
+    document.write("<br>Cities List: " + cities + "<br>");
+    document.write("Selected Cities: " + selectedCities + "<br>");
+  </script>
+
+  <!-- 12. Array join -->
+  <script>
+    let arr = ["This", " is", " my", " cat"];
+    let singleString = arr.join("");
+    document.write("<br>Array: " + arr + "<br>");
+    document.write("String: " + singleString + "<br>");
+  </script>
+
+  <!-- 13. FIFO (Queue) -->
+  <script>
+    let fifo = [];
+    fifo.push("Keyboard");
+    fifo.push("Mouse");
+    fifo.push("Printer");
+    fifo.push("Monitor");
+
+    document.write("<br><br>FIFO Queue:<br>");
+    while (fifo.length > 0) {
+      document.write(fifo.shift() + "<br>");
+    }
+  </script>
+
+  <!-- 14. LIFO (Stack) -->
+  <script>
+    let lifo = [];
+    lifo.push("Keyboard");
+    lifo.push("Mouse");
+    lifo.push("Printer");
+    lifo.push("Monitor");
+
+    document.write("<br><br>LIFO Stack:<br>");
+    while (lifo.length > 0) {
+      document.write(lifo.pop() + "<br>");
+    }
+  </script>
+
+  <!-- 15. Dropdown of phone manufacturers -->
+  <script>
+    let manufacturers = ["Apple", "Samsung", "Motorola", "Nokia", "Sony", "Haier"];
+    document.write("<br><br>Select Manufacturer:<br>");
+    document.write("<select>");
+    for (let i = 0; i < manufacturers.length; i++) {
+      document.write(`<option value="${manufacturers[i]}">${manufacturers[i]}</option>`);
+    }
+    document.write("</select>");
+  </script>
+
+</body>
+</html>
