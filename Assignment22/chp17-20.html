@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 17–20 Q1–10</title>
+</head>
+<body>
+
+<script>
+    // Q1: Multidimensional empty array initialize
+ let multiArray = [[], [], []];
+
+console.log(multiArray);
+document.write("Multidimensional empty array initialized: " + JSON.stringify(multiArray));
+
+  // Q2
+  let matrix = [
+    [0, 1, 2, 3],   // Pehli row
+    [1, 0, 1, 2],   // Dusri row
+    [2, 1, 0, 1]    // Teesri row
+  ];
+  console.log(matrix);
+  document.write("<h3>Matrix:</h3>");
+  for(let i = 0; i < matrix.length; i++) {
+    document.write(matrix[i].join(" ") + "<br>");
+  }
+
+//   Q3 Write a program to print numeric counting from 1 to 10. 
+    document.write("<h3>Counting:</h3>");
+    for (let i = 1; i <= 10; i++) {
+      document.write(i + ", "); // 1 se 10 tak counting print
+    } 
+  // Q4: Multiplication table based on user input
+  let tableNum = +prompt("Enter number for table:");
+  let tableLength = +prompt("Enter length of table:");
+  for (let i = 1; i <= tableLength; i++) {
+    document.write(`${tableNum} x ${i} = ${tableNum * i} <br>`); }
+
+  // Q5: User se fruits ka array lena aur print karna
+  let fruits = ["apple", "banana", "mango", "orange", "strawberry"];
+  for (let i = 0; i < fruits.length; i++) {
+    document.write(fruits[i] + "<br>");
+document.write("Element at index " + i + " is " + fruits[i] + "<br>");
+  }
+
+// //   Q6Generate the following series in your browser. See 
+// example output. 
+// a. Counting: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 
+// b. Reverse counting: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 
+// c. Even: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 
+// d. Odd: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 
+// e. Series: 2k, 4k, 6k, 8k, 10k, 12k, 14k, 16k, 18k, 20k
+  //  Counting print karna 1 se 15
+  document.write("<h3>Counting:</h3>");
+  for (let i = 1; i <= 15; i++) {
+    document.write(i + ", ");
+  }
+
+  //  Reverse counting 10 se 1
+  document.write("<h3>Reverse Counting:</h3>");
+  for (let i = 10; i >= 1; i--) {
+    document.write(i + ", ");
+  }
+
+  //  Even numbers 0 se 20
+  document.write("<h3>Even Numbers:</h3>");
+  for (let i = 0; i <= 20; i += 2) {
+    document.write(i + ", ");
+  }
+
+  //  Odd numbers 1 se 19
+  document.write("<h3>Odd Numbers:</h3>");
+  for (let i = 1; i <= 19; i += 2) {
+    document.write(i + ", ");
+  }
+
+  //  Series (2k, 4k, ..., 20k)
+  document.write("<h3>Series:</h3>");
+  for (let i = 2; i <= 20; i += 2) {
+    document.write(i + "k, ");
+  }
+
+  // Q7: Bakery item search
+  let bakeryItems = ["cake", "apple pie", "cookie", "chips", "patties"];
+  let userSearch = prompt("Welcome to ABC Bakery. What do you want?");
+  let found = false;
+  for (let i = 0; i < bakeryItems.length; i++) {
+    if (bakeryItems[i] === userSearch.toLowerCase()) {
+      document.write(`${userSearch} is available at index ${i} in our bakery<br>`);
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    document.write(`We are sorry. ${userSearch} is not available in our bakery<br>`);
+  }
+
+
+// //   Q8Write a program to identify the largest number in the 
+// given array. 
+// A = [24, 53, 78, 91, 12]. 
+// Largest number = 91
+    let A = [24, 53, 78, 91, 12];
+    let largest = A[0]; // Assume first element is the largest
+    for (let i = 0; i < A.length; i++) {
+        if (A[i] > largest) {
+        largest = A[i];  }
+    }
+    document.write("Largest number in the array is: " + largest + "<br>");
+
+    // Q9  Write a program to identify the smallest number in the 
+// given array. 
+// A = [24, 53, 78, 91, 12] 
+
+// Smallest number = 12
+    let smallest = A[0]; // Assume first element is the smallest
+    for (let i = 0; i < A.length; i++) {
+        if (A[i] < smallest) {
+        smallest = A[i];  }
+    }
+    document.write("Smallest number in the array is: " + smallest + "<br>");
+
+    // Q10: Print multiples of 5 from 1 to 100
+    document.write("<h3>Multiples of 5:</h3>");
+    for (let i = 1; i <= 100; i++) {
+      if (i % 5 === 0) {
+        document.write(i + ", ");
+      }
+    }
+</script>
+
+</body>
+</html>

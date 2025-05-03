@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 17-20</title>
+</head>
+<body>
+    <script>
+        // 1. Loop to run 10 times
+        for (let i = 0; i < 10; i++) {
+            console.log("Iteration:", i);
+        }
+
+        // 2. Loop to run 12 times
+        for (let i = 0; i <= 11; i++) {
+            console.log("Iteration:", i);
+        }
+
+        // 3. Missing characters: ();{
+        // Corrected code:
+        for (var i = 0; i <= 4; i++) {
+            console.log("Iteration:", i);
+        }
+
+        // 4. Loop with a counter name that's not 'i'
+        for (let counter = 0; counter < 100; counter++) {
+            console.log("Counter:", counter);
+        }
+
+        // 5. Loop running 3 times using decrement
+        for (let i = 2; i > -1; i--) {
+            console.log("Iteration:", i);
+        }
+
+        // 6. Assigning the number of elements in an array to a variable
+        let arr = [1, 2, 3, 4, 5];
+        let numOfElements = arr.length;
+
+        // 7. Setting a variable named "flag" with a Boolean value
+        let flag = true;
+
+        // 8. Loop limited by the number of elements in the array 'pets'
+        let pets = ["dog", "cat", "rabbit"];
+        for (let i = 0; i < pets.length; i++) {
+            console.log("Pet:", pets[i]);
+        }
+
+        // 9. Coding Exercise
+        for (let i = 0; i < 10; i++) {
+            if (i === 1) {
+                alert(i);
+                break;
+            }
+        }
+
+        // 10. Array of usernames and prompt
+        let userNames = ["Alice", "Bob", "Charlie"];
+        let firstName = prompt("Enter first name");
+        for (let i = 0; i < userNames.length; i++) {
+            if (firstName === userNames[i]) {
+                alert("Enter");
+                break;
+            } else if (i === userNames.length - 1) {
+                alert("Please write correct user name");
+            }
+        }
+
+        // 11. Complete the code to display an alert if a match isn't found
+        let matchFound = false;
+        let list = ["apple", "banana", "cherry"];
+        let userInput = prompt("Enter a fruit name");
+        for (let i = 0; i < list.length; i++) {
+            if (userInput === list[i]) {
+                alert("Match found");
+                matchFound = true;
+                break;
+            }
+        }
+        if (!matchFound) {
+            alert("No match found");
+        }
+
+        // 12. Nested loop to concatenate elements of two arrays
+        let firstArr = ["a", "b", "c", "d", "e", "f"];
+        let secondArr = [1, 2, 3, 4, 5, 6];
+        for (let i = 0; i < firstArr.length; i++) {
+            for (let j = 0; j < secondArr.length; j++) {
+                console.log(firstArr[i] + secondArr[j]);
+            }
+        }
+    </script>
+</body>
+</html>
