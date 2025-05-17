@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chp 31-40</title>
+</head>
+<body>
+    <script>
+
+// CHAPTER 31-34
+
+// Q1Code a statement that creates a new Date object and assigns it to 
+//dObj, which hasn't been declared beforehand. 
+
+
+
+var dObj = new Date();
+console.log(dObj);
+
+
+// 2. Code a statement that creates a new Date object, converts it to a 
+// string, and assigns the string to dStr, which hasn't been declared 
+// beforehand. 
+
+var dStr = new Date().toString();
+console.log(dStr);
+
+
+// 3. Code a statement that extracts the day of the week from a Date 
+// object represented by d and assigns it to day, which hasn't been 
+// declared beforehand. 
+
+
+var d = new Date();
+var day = d.getDay();
+console.log(day);
+// 4. The day has been extracted from the Date object and assigned to d. The names of the days of the week have been assigned to the 
+// array dayNames. Alert the current day with array index. 
+
+var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var d = new Date();
+var currentDay = d.getDay();
+alert("Today is " + dayNames[currentDay] + ".");
+
+// 5. Extract all parts of the Date and Time and assign it to the variable which has not been declared beforehand. 
+
+
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+var milliseconds = date.getMilliseconds();
+
+
+// 6. Code a statement that creates a Date object for the last day of the last month of 2020 and assigns it to later, which hasn't been 
+// declared beforehand. 
+
+var later = new Date(2020, 11, 31);
+console.log(later);
+
+// 7. Create a Date object for the second day of the second month of 
+// 1992 and assign it to a variable that hasn't been declared 
+// beforehand. 
+
+var date2 = new Date(1992, 1, 2);
+console.log(date2);
+// 8. Code a single statement that displays in an alert the milliseconds that elapsed between the reference date and the beginning of 
+// 1980.
+
+var referenceDate = new Date("1970-01-01T00:00:00Z");
+var startOf1980 = new Date("1980-01-01T00:00:00Z");
+var millisecondsElapsed = startOf1980 - referenceDate;
+alert("Milliseconds elapsed since reference date to the beginning of 1980: " + millisecondsElapsed);
+
+// 9. How do you change the year of a date in JavaScript? 
+
+
+
+var date = new Date("2023-10-01");
+date.setFullYear(2025);
+console.log(date); 
+// 10. Write a JavaScript function to change the month of a given 
+// date to January. 
+
+function changeMonthToJanuary(date) {
+    date.setMonth(0);
+        return date;
+} 
+//11. What is the method to change the day of the week for a 
+// specific date in JavaScript? 
+
+
+date = new Date("2025-10-01");
+date.setDate(15);
+console.log(date);
+
+// 12,Write a JavaScript function to change the minutes of a given 
+// time to a specific value. (Value by prompt) 
+
+function changeMinutes(date, minutes) {
+    date.setMinutes(minutes);
+    return date;
+}
+var date = new Date("2023-10-01T12:00:00Z");
+var newMinutes = prompt("Enter new minutes:");
+var updatedDate = changeMinutes(date, newMinutes);
+console.log(updatedDate);
+// 13. 
+// Write a JavaScript function to add a specific number of 
+// hours to a given time. 
+function addHours(date, hours) {
+    date.setHours(date.getHours() + hours);
+    return date;
+}
+var date = new Date("2023-10-01T12:00:00Z");
+var hoursToAdd = prompt("Enter number of hours to add:");
+var upddDate = addHours(date, hoursToAdd);
+console.log(upddDate);
+// 14. 
+// You have to create a age calculator in JavaScript.
+
+function calculateAge(birthDate) {
+    var today = new Date();
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+var birthDate = new Date("2005-01-01");
+    </script>
+
+
+
+<script>
+
+    // CHAPTER 35-37
+
+//  1.   Code the first line of a function displayAlert. 
+
+
+function displayAlert() {
+    alert("This is alert msg");
+}
+// 2. Code a function named askName that prompts the user to "Enter 
+// name" and assigns the answer to userName, which hasn't been 
+// declared beforehand. 
+function askName() {
+    var userName = prompt("Enter name:");
+    return userName;
+}
+
+askName();
+
+// 3. Code a function that calls 2 other functions. 
+
+function functions() {
+    displayAlert();
+    askName();
+}
+// 4. Code a function that displays a prompt, "Enter name" and then 
+// displays the name in an alert. Call the function. 
+
+function displayName() {
+    var name = prompt("Enter name:");
+    alert("Your name is: " + name);
+}
+displayName();
+
+// 5. Code the first line of a function named concat that has 3 
+// parameters, the first three letters of the alphabet. Call that takes 
+// a variable, a string, and a number as arguments.
+
+function concat(a, b, c) {
+    return a + b + c;
+}
+var result = concat("A", "B", "C");
+console.log(result);
+// 6. Code a function that has 2 parameters. Concatenate them and 
+// assign the result to a variable that hasn't been declared 
+// beforehand. 
+
+function concatenateStrings(str1, str2) {
+    var result = str1 + str2;
+    return result;
+}
+var concatenatedResult = concatenateStrings("Anas", "Iqbal");
+console.log(concatenatedResult);
+// 7. Code a function that has three parameters. Multiply them and 
+// assign them to a variable that hasn't been declared yet. 
+
+
+function multiplyNumbers(num1, num2, num3) {
+    var result = num1 * num2 * num3;
+    return result;
+}
+var multiplied = multiplyNumbers(2, 3, 4);
+console.log(multiplied);
+// 8. and 10.  Write a JavaScript function that takes an array of numbers as 
+// input and returns the average of those numbers.
+
+function Average(numbers) {
+    var sum = 0;
+    for (var i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    var average = sum / numbers.length;
+    return average;
+}
+var numbers = [1, 2, 3, 4, 5];
+console.log(Average(numbers));
+// 9. Write a JavaScript function that takes two parameters and returns 
+// their sum. 
+
+function addNumbers(num1, num2) {
+    return num1 + num2;
+}
+console.log(addNumbers(5,10));    
+
+// 11. 
+// You have to capture the returned value from a function and 
+// store it in a variable? 
+// 12. 
+// 13. 
+// 14. 
+// Write a function which tells letter counts of (word). 
+// Write a function to set (year) in date object. 
+// Write a function which tells the age of a person who Born on 
+// (dateOfBirth) 
+// 15. 
+// Write a function which tells the presense of (word) in an 
+// array = ['zaid','haris','raza','abubakar','hassan','hussain','fatima'] 
+// result should be in true or false 
+// 16. 
+// Write a function which repeat (letter) 10 times. 
+// Hint: "abcde" str.repeat(10) 
+// 17. 
+// write a function which reverse array = ['a','b','c','d','e'] 
+// Hint: arr.reverse() 
+// 18. 
+// Write a JavaScript function that reverses a number. 
+// Example x = 32243; 
+// Expected Output : 34223 
+// 19. 
+// Write a JavaScript function that checks whether a passed 
+// string is a palindrome or not? 
+// Hint: A palindrome is word, phrase, or sequence that reads the 
+// same backward as forward, e.g., madam or Wow. 
+// 20. 
+// Write a JavaScript function that accepts a string as a 
+// parameter and converts the first letter of each word into upper 
+// case. 
+// Example string : 'the quick brown fox' 
+// Expected Output : 'The Quick Brown Fox ' 
+// 21. 
+// Write a JavaScript function that takes an array of numbers 
+// and finds the lowest and greatest numbers, respectively. 
+// Sample array : [1,2,3,4,5] 
+// Expected Output : 1,5 
+</script>
+</body>
+</html>

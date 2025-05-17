@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//  Q1Type the characters that are missing from this code. 
+// var allLower = userInput.toLowerCase; 
+// Note: Correct this statement by yourself. 
+var userInput = "ANAs";
+var allLower = userInput.toLowerCase();
+
+// Q2 Convert the string represented by x to lower-case and assign the result to the same variable.
+// Q3 Convert the string represented by y to upper-case and assign the result to the same variable.
+var y = "anAS";
+y = y.toLowerCase();
+console.log(y);
+y = y.toUpperCase();
+console.log(y);
+
+//  Q4 Convert the string represented by a variable to lower-case and assign the result to a second variable that 
+// hasn't been declared beforehand. 
+var z = y.toLowerCase();
+console.log(z);
+
+// Q5 Convert the string represented by an array element to lower-case and assign it to a variable that hasn't been declared beforehand.
+
+var arr = ["ANAS", "IQBAL","MUHAMMAD"];
+for (var i = 0; i < arr.length; i++) {
+    var Name = arr[i].toLowerCase();
+    console.log(Name);
+}
+
+
+// Q6 Display in an alert the upper-case version of the string represented by a variable. 
+
+var string1 = "anas iqbal";
+var uppercase = string1.toUpperCase();
+alert(uppercase);
+
+// Q7 var cityName = “kaRacHi”; 
+// Convert the string represented by a cityName in Capitalisation is the writing of a word with its first letter 
+// in uppercase and the remaining letters in lower case.
+
+var cityName = "kaRacHi";
+var capitalizedCityName = cityName.charAt(0).toUpperCase() + cityName.slice(1).toLowerCase();
+console.log(capitalizedCityName);
+
+
+</script>
+</html>
