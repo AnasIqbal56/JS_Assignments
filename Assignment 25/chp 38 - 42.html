@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chp 38 - 42</title>
+</head>
+<body><script>
+
+
+// 1. Write a custom function power ( a, b ), to calculate the value of 
+// a raised to b. 
+
+
+function power(a, b) {
+    return a**b;
+}
+var x = prompt("Enter the base number");
+var y=prompt("Enter the power number");
+console.log(power(x, y));
+// 2. Any year is entered through the keyboard. Write a function to 
+// determine whether the year is a leap year or not. 
+
+function isLeap(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+var year = prompt("Enter a year");
+if (isLeap(year)) {
+    console.log("The given year: "+year + " is a leap year.");
+} else {
+    console.log("The given year: "+year + " is not a leap year.");
+}
+// 3. If the lengths of the sides of a triangle are denoted by a, b, and 
+// c, then area of triangle is given by 
+// area = S(S − a)(S − b)(S − c) 
+// where, S = ( a + b + c ) / 2 
+// Calculate area of triangle using 2 functions 
+
+
+function calculateS(a, b, c) {
+    return (a + b + c) / 2;
+}
+
+function Area(a, b, c) {
+    var s = calculateS(a, b, c);
+    if (s <= 0) {
+        return "Invalid triangle sides";
+    }
+    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+
+var a = prompt("Enter the length of side a");
+var b = prompt("Enter the length of side b");
+var c = prompt("Enter the length of side c");
+var area = Area(a, b, c);
+console.log("The area of the triangle is: " + area);
+// 4. Write a function that receives marks received by a student in 3 
+// subjects and returns the average and percentage of these 
+// marks. there should be 3 functions one is the mainFunction 
+// and other are for average and percentage. Call those functions 
+// from mainFunction and display result in mainFunction. 
+
+
+function calcuateAvge(marks) {
+    var total = 0;
+    for (var i = 0; i < marks.length; i++) {
+        total += marks[i];
+    }
+    return total / marks.length;
+}
+function calcuatePerage(marks) {
+    var total = 0;
+    for (var i = 0; i < marks.length; i++) {
+        total += marks[i];
+    }
+    return (total / (marks.length * 100)) * 100;
+}
+ 
+function mainFunc() {
+    var marks = [];
+    for (var i = 0; i < 3; i++) {
+        marks[i] = prompt("Enter marks for subject " + (i + 1));
+    }
+    var average = calcuateAvge(marks);
+    var percentage = calcuatePerage(marks);
+    console.log("Average: " + average);
+    console.log("Percentage: " + percentage + "%");
+}
+
+mainFunc();
+// 5. You have learned the function indexOf. Code your own custom 
+// function that will perform the same functionality. You can code 
+// for single character as of now. 
+
+function customfunc(string, sgchar) {
+    for (var i = 0; i < str.length; i++) {
+        if (string[i] === sgchar) {
+            return i;
+        }
+    }
+    return -1;
+}
+ 
+var string = prompt("Enter a string");
+var sgchar = prompt("Enter a character to find its index");
+var index = customfunc(string, sgchar);
+if (index !== -1) {
+    console.log("The index of the character " + sgchar + " is: " + index);
+} else {
+    console.log("Character not found in the string.");
+}
+// 6. Write a function to delete all vowels from a sentence. Assume 
+// that the sentence is not more than 25 characters long. 
+ 
+function deletevwl(sent) {
+    var vowels = "aeiouAEIOU";
+    var result = "";
+    for (var i = 0; i < sent.length; i++) {
+        if(sent.length > 25) {
+            return "Sentence is too long. Please enter a sentence with 25 characters or less.";
+        }
+        else if (vowels.indexOf(sent[i]) === -1) {
+            result += sentence[i];
+        }
+    }
+    return result;
+}
+var sentence = prompt("Enter a sentence (max 25 characters):");
+var result = deletevwl(sentence);
+console.log("Sentence after removing vowels: " + result);
+// 7. Write a function with switch statement to count the number of 
+// occurrences of any two vowels in succession in a line of text. 
+// For example, in the sentence 
+// “Pleases read this application and give me gratuity” 
+// Such occurrences are ea, ea, ui. 
+
+function countingVowel(sentence) {
+    var count = 0;
+    var vowels = "aeiouAEIOU";
+    for (var i = 0; i < sentence.length - 1; i++) {
+        if (vowels.indexOf(sentence[i]) !== -1 && vowels.indexOf(sentence[i + 1]) !== -1) {
+            count++;
+        }
+    }
+    return count;
+}
+var sentence = prompt("Enter a sentence:");
+var count = countingVowel(sentence);
+console.log("Number of occurrences of two vowels in succession: " + count);
+
+// 8. The distance between two cities (in km.) is input through the 
+// keyboard. Write four functions to convert and print this 
+// distance in meters, feet, inches and centimeters. 
+
+
+function convertDist(distance) {
+    var meters = distance * 1000;
+    var feet = distance * 3280.84;
+    var inches = distance * 39370.1;
+    var centimeters = distance * 100000;
+
+    console.log("Distance in meters: " + meters);
+    console.log("Distance in feet: " + feet);
+    console.log("Distance in inches: " + inches);
+    console.log("Distance in centimeters: " + centimeters);
+}
+
+var distance = prompt("Enter the distance in kilometers:");
+console.log(convertDist(distance));
+
+
+// 9. Write a program to calculate overtime pay of employees. 
+// Overtime is paid at the rate of Rs. 12.00 per hour for every hour 
+// worked above 40 hours. Assume that employees do not work 
+// for fractional part of an hour. 
+
+function OverPay(hoursWorked) {
+    var overtimeRate = 12;
+    var overtimeHours = hoursWorked - 40;
+    if (overtimeHours > 0) {
+        return overtimeHours * overtimeRate;
+    } else {
+        return 0;
+    }
+}
+
+var hoursWorked = prompt("Enter the number of hours worked:");
+var overtimePay = OverPay(hoursWorked);
+console.log("Overtime pay: " + overtimePay);
+// 10. A cashier has currency notes of denominations 10, 50 and 
+// 100. If the amount to be withdrawn is input through the 
+// keyboard in hundreds, find the total number of currency notes 
+// of each denomination the cashier will have to give to the 
+// withdrawer. 
+
+function calculaNotes(amount) {
+    var note100 = Math.floor(amount / 100);
+    amount %= 100;
+    var note50 = Math.floor(amount / 50);
+    amount %= 50;
+    var note10 = Math.floor(amount / 10);
+
+    console.log("Number of 100 notes: " + note100);
+    console.log("Number of 50 notes: " + note50);
+    console.log("Number of 10 notes: " + note10);
+}
+
+
+</script>
+</body>
+</html>
