@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Calculator</title>
+  <meta name="description" content="Simple Calculator With Dark Mode." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="assets/calculator.ico">
+  <link rel="stylesheet" href="styles/dark.css" id="theme" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="header-container">
+        <h1 id="toast">Calculator</h1>
+        <div class="top-buttons">
+          <button type="button" onclick="changeTheme()" class="theme-button">
+            <img src="assets/SunIcon.svg" alt="Theme Icon" height="19" width="19" id="theme-icon">
+          </button>
+        </div>
+      </div>
+
+      <div class="first-row">
+        <input type="text" name="result" id="result" placeholder="Result" readonly />
+        <input type="button" value="C" onclick="clears()" id="clear-button" />
+      </div>
+
+      <div class="second-row">
+        <input type="button" value="1" onclick="display('1')" />
+        <input type="button" value="2" onclick="display('2')" />
+        <input type="button" value="3" onclick="display('3')" />
+        <input type="button" value="+" onclick="display('+')" />
+      </div>
+
+      <div class="third-row">
+        <input type="button" value="4" onclick="display('4')" />
+        <input type="button" value="5" onclick="display('5')" />
+        <input type="button" value="6" onclick="display('6')" />
+        <input type="button" value="-" onclick="display('-')" />
+      </div>
+
+      <div class="fourth-row">
+        <input type="button" value="7" onclick="display('7')" />
+        <input type="button" value="8" onclick="display('8')" />
+        <input type="button" value="9" onclick="display('9')" />
+        <input type="button" value="x" onclick="display('*')" />
+      </div>
+
+      <div class="fifth-row">
+        <input type="button" value="/" onclick="display('/')" />
+        <input type="button" value="0" onclick="display('0')" />
+        <input type="button" value="." onclick="display('.')" />
+        <input type="button" value="=" onclick="final()" />
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const lightTheme = "styles/light.css";
+    const darkTheme = "styles/dark.css";
+    const sunIcon = "assets/SunIcon.svg";
+    const moonIcon = "assets/MoonIcon.svg";
+    const themeIcon = document.getElementById("theme-icon");
+    const res = document.getElementById("result");
+    const toast = document.getElementById("toast");
+
+    function display(n) {
+      res.value += n;
+      console.log(res.value);
+    }
+
+    function clears() {
+      res.value = "";
+    }
+
+    function final() {
+      try {
+        const calculatedValue = eval(res.value || null);
+        if (isNaN(calculatedValue)) {
+          res.value = "Can't divide 0 with 0";
+          setTimeout(() => {
+            res.value = "";
+          }, 1300);
+        } else {
+          res.value = calculatedValue;
+        }
+      } catch (e) {
+        res.value = "Error";
+        setTimeout(() => {
+          res.value = "";
+        }, 1300);
+      }
+    }
+
+    function changeTheme() {
+      const theme = document.getElementById("theme");
+      setTimeout(() => {
+        toast.innerHTML = "Calculator";
+      }, 1500);
+      if (theme.getAttribute("href") === lightTheme) {
+        theme.setAttribute("href", darkTheme);
+        themeIcon.setAttribute("src", sunIcon);
+        toast.innerHTML = "Dark Mode 🌙";
+      } else {
+        theme.setAttribute("href", lightTheme);
+        themeIcon.setAttribute("src", moonIcon);
+        toast.innerHTML = "Light Mode ☀️";
+      }
+    }
+
+    document.addEventListener("keydown", keyboardInputHandler);
+
+    function keyboardInputHandler(e) {
+      e.preventDefault();
+      const key = e.key;
+
+      if (/[0-9+\-*/.]/.test(key)) {
+        display(key);
+      } else if (key === "Enter") {
+        final();
+      } else if (key === "Backspace") {
+        res.value = res.value.slice(0, -1);
+      }
+    }
+  </script>
+</body>
+
+</html>

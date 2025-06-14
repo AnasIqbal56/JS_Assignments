@@ -31,7 +31,6 @@ console.log(dStr);
 // object represented by d and assigns it to day, which hasn't been 
 // declared beforehand. 
 
-
 var d = new Date();
 var day = d.getDay();
 console.log(day);
@@ -225,11 +224,31 @@ console.log(addNumbers(5,10));
 // 11. 
 // You have to capture the returned value from a function and 
 // store it in a variable? 
-// 12. 
-// 13. 
-// 14. 
-// Write a function which tells letter counts of (word). 
+
+function returnvalue() {
+    return "Hello, Anas!";
+}
+
+var retrn = returnvalue();
+console.log(retrn);
+
+// Write a function which tells letter counts of (word).
+
+function lengthofwords(word) {
+    return word.length;
+}
+x = prompt("Enter a word to count it's letter:");
+console.log(lengthofwords(x));
+
 // Write a function to set (year) in date object. 
+function setYearInDate(year) {
+    var date = new Date();
+    date.setFullYear(year);
+    return date;
+}
+var yearSet = prompt("Enter a year to set in date object:");
+console.log(setYearInDate(yearSet));
+
 // Write a function which tells the age of a person who Born on 
 // (dateOfBirth) 
 // 15. 
