@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+.inputs input {
+  width: 80px;
+  padding: 10px;
+  font-size: 18px;
+  margin: 0 10px;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.display {
+  font-size: 60px;
+  padding: 20px 40px;
+  margin: 20px auto;
+  border-radius: 20px;
+  text-shadow: 0 0 15px #00ffd5;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #00ffe0;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00ffe0;
+}
+
+button:hover {
+  background-color: #00ffe0;
+  color: #000;
+  transform: scale(1.05);
+}
